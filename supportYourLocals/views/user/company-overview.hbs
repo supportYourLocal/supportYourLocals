@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Companies to support</h1>
+    
+    {{#each companyList}}
+    <div class="container2">
+    	<a href="/business/{{_id}}"><h2 id="companyName">{{companyName}}</h2></a>
+    	
+        <p class="text">{{description}}</p>
+    </div>
+    
+    {{/each}}    
+
+</div>
