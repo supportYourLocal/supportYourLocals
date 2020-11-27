@@ -1,50 +1,48 @@
-<h1>Company Details</h1>
-<br>
-<div>Company: {{business.companyName}}</div>
-<div>Description of business: {{business.description}}</div>
-<br>
-<h2>Contact Details</h2>
-<br>
-<div>Contact Person: {{business.contact.name}}</div>
-<div>Phone number: {{business.contact.phone}}</div>
-<div>Address: {{business.contact.address}}</div>
-<div>E-mail-address: {{business.contact.email}}</div>
-<div>Website: <div>{{business.contact.website}}</div>
-<br>
-<h2>Products</h2>
-{{#each business.products}}
-<div>business.products.name</div>
-<div>business.products.imageUrl</div>
-{{//each}}
-<br>
-<h2>Voucher</h2>
-{{#each business.voucher}}
-<div>business.voucher.type</div>
-{{//each}}
+<div class="container">
+    <h1>Company Details</h1>
 
-
-{{!-- 
-    companyName: String,
-    description: String,
-    contact: {
-        name: String,
-        phone: String,
-        address: String,
-        email: String,
-        website: String,
-    },
-    username: String,
-    password: String,
-    //   socialmedia: String,
-    avatar: String,
-    role: {
-        type: String,
-        enum: ['admin', 'user'],
-        default: 'admin'
-      },
-
-    voucher: [
-        { type: Schema.Types.ObjectId, ref: 'Voucher' }],
-    products: [
-        {name: String, imageUrl: String,}
-    ], --}}
+    <div class="details">
+        {{!-- <h2 id="companyName">{{business.companyName}}</h2> --}}
+    </div>
+    <div class="logo">
+        <img id="logo" src="{{business.avatar}}" alt="imageUrl">
+    </div>
+        <br>
+    <div>
+        <h3>Who we are</h3>
+            <p class="text">{{business.description}}  </p> 
+    </div>
+        <div>
+            <h3>Contact Details</h3>
+            <br>
+            <span> Contact Person:  {{business.contact.name}}</span>  
+            <br>
+            <span>Phone number: {{business.contact.phone}}</span>
+            <br>    
+            <span>Address: {{business.contact.address}}</span>
+            <br>
+            <a href="{{business.contact.email}}">{{business.contact.email}}</a>
+            <br>
+            <a href="{{business.contact.website}}">{{business.contact.website}}</a>
+            
+            <br>
+        </div>
+    
+        <h3>Products</h3>
+        <div id="product-list">
+        {{#each business.products}}
+            <img id="product" src={{imageUrl}} alt="imageUrl">
+        {{/each}}
+        </div>
+    <div id="product-list">
+     <h3>Voucher</h3>
+        <span>Here you can buy a voucher from  " {{business.companyName}} " for 10€ 20€ & 50€</span>
+        <br>
+        <img id="product1" src="{{business.voucher1}}" alt="">
+       
+        </div>
+    {{!-- <br>
+    <h3>Voucher</h3>
+    {{#each business.voucher}}
+    <div>business.voucher.type</div>
+    {{/each}} --}}
